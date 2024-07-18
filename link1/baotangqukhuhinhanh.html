@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio src="image/1000 Ánh Mắt.mp3" autoplay loop></audio>
+    <header>
+        <nav>   
+            <a class="nav_link" href="./chucmungsinhnhat.html">LỜI CHÚC</a>
+            <a class="nav_link" href="./baotangquakhuvideo.html">VIDEO</a>
+            <a class="nav_link" href="./baotangqukhuhinhanh.html">HÌNH ẢNH</a>
+        </nav>
+    </header>
+    <h1>NHỮNG BỨC HÌNH QUÝ GIÁ ĐỐI VỚI EM</h1> 
+    <div class="gallery-wrap">
+        <div class="gallery">
+            <img src="image/1683364780761.jpg" alt="Lần đầu ta gặp nhau nè" onclick="openModal(this)">
+            <img src="image/1708273400984.jpeg" alt="Người gì mà xinh quá trời" onclick="openModal(this)">
+            <img src="image/400228222_1400747347186080_708248591743102843_n.jpg" alt="Cái Này Thì CUTE VÃI, かわいい" onclick="openModal(this)">
+            <img src="image/received_722159676156978.png" alt="Sticker" onclick="openModal(this)">
+            <img src="image/received_692688482611408.jpeg" alt="Đệt em xin lỗi =))) " onclick="openModal(this)">
+            <img src="image/Screenshot_2023-11-30-00-30-15-178_com.facebook.orca.jpg" alt="Sắp Tới Mình Dùng Filter Khác Nhé" onclick="openModal(this)">
+            <img src="image/1708274005753 - Sao chép.jpg" alt="Uồi Lần Đầu Được Chụp Ảnh Cùng Chị Nè" onclick="openModal(this)">
+            <img src="image/1708274005484 - Sao chép.jpg" alt="He He" onclick="openModal(this)">
+            <img src="image/1720814913680.jpeg" alt="Ảnh này thì ngon lém" onclick="openModal(this)">
+            <img src="image/received_1003315597404606.jpeg" alt="Ước Được Gặp Chị Lúc Này" onclick="openModal(this)">
+            <img src="image/received_1443900909802235.jpeg" alt="Phu Nhân" onclick="openModal(this)">
+            <img src="image/received_765227385435852.jpeg" alt="Thề Ảnh Này Nhìn CUTE" onclick="openModal(this)">
+            <img src="image/z4976470152059_bc7506b50d21a64149882d760002ae7c.jpg" alt="Mong Được Ngắm Chị" onclick="openModal(this)">
+            <img src="image/z5125470216606_dae225ab443f98456ff123cfe2840393.jpg" alt="ĐÔI KHI EM THẤY ALBUM MÁY EM TOÀN CHỊ THÔI À" onclick="openModal(this)">
+            <img src="image/IMG_20231215_105537.jpg" alt="XUẤT SĂC" onclick="openModal(this)">
+            <img src="image/IMG_20231112_111932.jpg" alt="Chị Phải Vui Vẻ và Thật Tươi Như Bức Này Nè" onclick="openModal(this)">
+            <img src="image/1720814777266.webp" alt="Công Anh Suy" onclick="openModal(this)">
+            <img src="image/1720814777294.jpg" alt="Em vẫn vui lăm, cố gắng thay đổi" onclick="openModal(this)">
+            <img src="image/1708273400664.jpg" alt="EM TIN CHÍNH EM" onclick="openModal(this)">
+        </div>
+    </div>
+    
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+    
+
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+            const gallery = document.querySelector('.gallery');
+            const galleryWrap = document.querySelector('.gallery-wrap');
+
+            // Sao chép gallery nhiều lần để tạo hiệu ứng trượt vô hạn
+            for (let i = 0; i < 5; i++) {  
+                const clone = gallery.cloneNode(true);
+                galleryWrap.appendChild(clone);
+            }
+
+            // Modal functionality
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+
+            // Lắng nghe sự kiện khi click vào từng ảnh để mở modal
+            document.querySelectorAll('.gallery img').forEach(img => {
+                img.addEventListener('click', function () {
+                    openModal(this);
+                });
+            });
+
+            // Đóng modal khi click ra ngoài modal
+            window.addEventListener('click', function (event) {
+                if (event.target == modal|| event.target == captionText) {
+                    closeModal();
+                }
+            });
+
+            function openModal(element) {
+                modal.style.display = "block";
+                modalImg.src = element.src;
+                captionText.innerHTML = element.alt;
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+            }
+        });
+
+    </script>
+</body>
+</html>

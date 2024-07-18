@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Đăng Nhập</h1>
+    <form id="loginForm">
+        <div class="input-group">
+            <label for="username">Nhập Họ Và Tên</label>
+            <input type="text" id="username" name="username" placeholder="Nhập họ và tên của bạn" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Nhập Ngày Sinh</label>
+            <input type="password" id="password" name="password" placeholder="Nhập ngày sinh của bạn" required>
+        </div>
+        <button type="submit" class="loginbutton">Đăng Nhập</button>
+        <div id="message"></div>
+    </form>
+</div>
+<script>
+    const accounts = [
+    { username: "Nguyễn Thị Thu Thảo", password: "19072003" },
+    { username: "Nguyễn Thị Thu Thảo", password: "19703" },
+    { username: "Nguyễn Thị Thu Thảo", password: "1972003" },
+    { username: "Nguyễn Thị Thu Thảo", password: "1973" },
+    { username: "Thu Thảo", password: "19072003" },
+    { username: "Thu Thảo", password: "19703" },
+    { username: "Thu Thảo", password: "1972003" },
+    { username: "Thu Thảo", password: "1973" },
+];
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Ngăn form gửi đi mặc định
+    
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    const account = accounts.find(acc => acc.username === username && acc.password === password);
+    
+    if (account) {
+        alert("Đăng nhập thành công");
+        window.location.assign('./chucmungsinhnhat.html');
+    } else {
+        message.innerHTML = "Tài khoản hoặc mật khẩu không đúng";
+    }
+});
+
+</script>
+
+</body>
+</html>

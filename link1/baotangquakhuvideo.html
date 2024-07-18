@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="backgroundAudio" src="image/headincloud.mp3" autoplay loop></audio>
+    <header>
+        <nav>   
+            <a class="nav_link" href="./chucmungsinhnhat.html">LỜI CHÚC</a>
+            <a class="nav_link" href="./baotangquakhuvideo.html">VIDEO</a>
+            <a class="nav_link" href="./baotangqukhuhinhanh.html">HÌNH ẢNH</a>
+        </nav>
+    </header>
+    <h1>NHỮNG BỨC HÌNH QUÝ GIÁ ĐỐI VỚI EM</h1> 
+    <div class="gallery-wrap">
+        <div class="gallery">
+            <video src="image/2024-01-20-190239980.mp4" autoplay muted loop onclick="openModal(this)" title="Lần Đi 200km Ngỡ Rằng Mọi Thứ Đã Không Thể Nữa"> </video>
+            <video src="image/4051819307472771538864501313601213323407258n.mp4" autoplay muted loop onclick="openModal(this)" title="Lần Đi Xem Phim Đầu Tiên Nè"></video>
+            <video src="image/An8J-9d71nlO0s68D9aS_GfvHLRWx-f2mVVZfjG7npfo8jsDu8ARvCcZhQFg-S0AyBEla6bXEZOKACPGAGp5p71A.mp4" title="Má Nó Xinh" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/41440737610833567831155404561589281433605822n.mp4" title="Để Em"autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/FDownloader.net-1150920942580314-(1080p).mp4" title="Dễ Thưn Nè"autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/GONGqhUY3HeqVgDAISe2BGaYdbv4GAAAF.mp4" title="Cái Này Thì Quyến Rũ Nè" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_320555037439015.mp4" title="Xinh Gái Nè" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_1705588633275796.mp4" title="Cái Này Thì Xuất Sắc" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/5628195924203.mp4" title="He He, em đã định về gửi chị rồi cười cơ mà..."autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_1972754559785576.mp4" title="Hay Nè, Chị Nên Mắng Em Nhiều Hơn Thay Vì..." autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_670710238543214.mp4" title="Nhớ Chị" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/FbVideo_1719829935291.mp4" title="Đây Là Lý Do Vì Sao Em Muốn Cố Gắng"autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_359187243152278.mp4" title="Đợt Này Thì Em Mê Lắm Luông" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_365549549289470.mp4" title="Đê Mê Vẻ Đẹp Này" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_988152612249095.mp4" title="Thậc Á Chị Để Tóc Ngắn Cực Xinh" autoplay muted loop onclick="openModal(this)"></video>
+            <video src="image/received_726368745605527.mp4" title="Em Đi Chếc Đây"autoplay muted loop onclick="openModal(this)"></video>
+            
+        </div>
+    </div>
+    
+    <div id="myModal" class="modal">
+        <video class="modal-content" id="video01" controls></video>
+        <div id="caption"></div>
+    </div>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const gallery = document.querySelector('.gallery');
+            const galleryWrap = document.querySelector('.gallery-wrap');
+            const backgroundAudio = document.getElementById('backgroundAudio');
+
+            // Sao chép gallery nhiều lần để tạo hiệu ứng trượt vô hạn
+            for (let i = 0; i < 5; i++) {  
+                const clone = gallery.cloneNode(true);
+                galleryWrap.appendChild(clone);
+            }
+
+            // Modal functionality
+            const modal = document.getElementById("myModal");
+            const modalVideo = document.getElementById("video01");
+            const captionText = document.getElementById("caption");
+
+            // Lắng nghe sự kiện khi click vào từng video để mở modal
+            document.querySelectorAll('.gallery video').forEach(video => {
+                video.addEventListener('click', function () {
+                    openModal(this);
+                });
+            });
+
+            // Đóng modal khi click ra ngoài modal
+            window.addEventListener('click', function (event) {
+                if (event.target == modal|| event.target == captionText) {
+                    closeModal();
+                }
+            });
+
+            function openModal(element) {
+                modal.style.display = "block";
+                modalVideo.src = element.src;
+                modalVideo.play();
+                modalVideo.loop = true;
+                modalVideo.controls = true;
+                modalVideo.muted = false;
+                captionText.innerHTML = element.title;
+                backgroundAudio.pause();
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+                modalVideo.pause();
+                modalVideo.muted = true;
+                backgroundAudio.play();
+            }
+        });
+    </script>
+</body>
+</html>

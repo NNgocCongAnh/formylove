@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background: linear-gradient(180deg, #ffccff, #cc99ff);
+}
+html::-webkit-scrollbar {
+    width: 0px; /* Ẩn thanh cuộn trên Chrome */
+}
+header{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    background: #ff99cc;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    border-radius: 80px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+}
+nav a{
+    justify-content: space-around;
+}
+.nav_link{
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color:#663399;
+    font-size: 18px;
+}
+
+.nav_link:hover {
+    color: #007BFF; /* Change color on hover */
+}
+h1{
+    font-size: 50px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.hero{
+    margin: auto;
+    width:50%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background: #ff99cc;
+    border-radius: 20px;
+    z-index: -2;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero video {
+    width: 90%; /* Adjust the width as needed */
+    height: 80%; /* Maintain aspect ratio */
+    border-radius: 20px;
+    margin:auto;
+    z-index: 1;
+    object-fit: cover; 
+}
+
+.video-wrapper {
+    position: relative;
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: auto;
+}
+
+.blur-overlay {
+    justify-content: center; 
+    align-items: center;
+    position: absolute;
+    
+    width: 90%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.overlay-text {
+    border-radius: 10px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width: 80%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 33px;
+    line-height: 1.5;
+    z-index: 3;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    overflow-y: auto; 
+}
+/* Tùy chỉnh thanh cuộn */
+.overlay-text::-webkit-scrollbar {
+    width: 0; /* Đặt độ rộng thanh cuộn là 0 */
+    height: 0; /* Đặt chiều cao thanh cuộn là 0 */
+}
+
+.overlay-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2); /* Màu nền thanh cuộn */
+    border-radius: 10px;
+}
+
+.overlay-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5); /* Màu của thanh cuộn */
+    border-radius: 10px;
+}
+
+.overlay-text::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8); /* Màu của thanh cuộn khi hover */
+}
+
+.overlay-text p {
+    text-indent: 2em; /* Lùi đầu dòng 2 em đơn vị */
+    margin: 10px 0px; /* Thêm khoảng cách giữa các đoạn văn bản */
+}
+
+.indented {
+    text-indent: 10em; /* Adjust this value as needed for indentation */
+}
+
+@media (max-width: 768px) {
+    html,body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        background: linear-gradient(180deg, #ffccff, #cc99ff);
+    }
+    .overlay-text {
+        font-size: 18px;
+        padding: 8px 10px;
+        line-height: 1.6;
+    }
+    .blur-overlay{
+        width: 100%;
+        height: 100%;
+    }
+    .hero{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+    }
+    .hero video {
+        width: 100%;
+        height: 100%;
+    }
+    .video-wrapper {
+        width: 100%;
+        height: 100vh;
+    }
+    h1{
+        font-size: 30px;
+    }
+    nav {
+        padding: 0 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+        justify-content: space-around
+    }
+}
+
+@media (max-width: 480px) {
+    html,body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        background: linear-gradient(180deg, #ffccff, #cc99ff);
+    }
+    .overlay-text {
+        font-size: 18px;
+        padding: 8px 10px;
+        line-height: 1.6;
+    }
+    .blur-overlay{
+        width: 100%;
+        height: 100%;
+    }
+    .hero{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+    }
+    .hero video {
+        width: 100%;
+        height: 100%;
+    }
+    .video-wrapper {
+        width: 100%;
+        height: 100vh;
+    }
+    h1{
+        font-size: 30px;
+    }
+    nav {
+        padding: 0 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+        justify-content: space-around
+    }
+}

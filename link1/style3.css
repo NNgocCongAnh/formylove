@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background: linear-gradient(180deg, #ffccff, #cc99ff);
+}
+html::-webkit-scrollbar {
+    width: 0px; /* Ẩn thanh cuộn trên Chrome */
+}
+header{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    background: #ff99cc;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    border-radius: 80px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+}
+nav a{
+    justify-content: space-around;
+}
+.nav_link{
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color:#663399;
+    font-size: 18px;
+}
+
+.nav_link:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+
+.gallery-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px 0;
+    background: #ff99cc;
+    white-space: nowrap;
+    position: relative;
+    margin: 40px 0;
+}
+
+.gallery-wrap::before,
+.gallery-wrap::after {
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    content: '';
+    z-index: 2;
+}
+
+h1 {
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.gallery-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #663399, transparent);
+}
+
+.gallery-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #663399, transparent);
+}
+
+.gallery {
+    display: inline-block;
+    animation: slide 55s infinite linear;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+.gallery video:hover {
+    transform: scale(1.1);
+}
+.gallery img {
+    height: 600px;
+    width: auto;
+    margin: 0 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 20px;
+}
+.gallery video{
+    height: 600px;
+    width: auto;
+    margin: 0 30px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    border-radius: 20px;
+
+}
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+.modal::-webkit-scrollbar{
+    width:0px;
+}
+
+.modal img{
+    width: 20%;
+    height: auto;
+}
+.modal video{
+    width: 25%;
+    height: auto;
+}
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 60%;
+    height:auto;
+    animation: zoom 0.6s;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ccc;
+    
+    height: 150px;
+}
+
+@keyframes zoom {
+    from {transform: scale(0);} 
+    to {transform: scale(1);}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 900px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        background: linear-gradient(180deg, #ffccff, #cc99ff);
+    }
+    h1{
+        font-size: 20px;
+    }
+    .gallery img{
+        height: 250px;
+        width: auto;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        border-radius: 20px;
+    }
+    .gallery video{
+        height: 250px;
+        width: auto;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: transform 0.5s;
+        border-radius: 20px;
+    
+    }
+    .modal img{
+        width: 20%;
+        height: auto;
+    }.modal video{
+        width: 26%;
+        height: auto;
+    }
+    .gallery-wrap {
+        margin: 20px 0;
+    }
+    nav {
+        padding: 0 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+        justify-content: space-around
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        background: linear-gradient(180deg, #ffccff, #cc99ff);
+    }
+    
+    .gallery img{
+        height: 500px;
+        width: auto;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        border-radius: 20px;
+    }
+    .gallery video{
+        height: 500px;
+        width: auto;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: transform 0.5s;
+        border-radius: 20px;
+    
+    }
+    .modal img{
+        width: 80%;
+        height: auto;
+    }.modal video{
+        width: 80%;
+        height: auto;
+    }
+    .gallery-wrap {
+        margin: 20px 0;
+    }
+    nav {
+        padding: 0 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+        justify-content: space-around
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
